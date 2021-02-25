@@ -150,7 +150,7 @@
             <phase>prepare-package</phase>
             <configuration>
               <outputDirectory>
-                ${baseDir}/src/main/resources/templates
+                ${basedir}/src/main/resources/templates
               </outputDirectory>
               <resources>
                 <resource>
@@ -171,7 +171,7 @@
             <phase>prepare-package</phase>
             <configuration>
               <outputDirectory>
-                ${baseDir}/src/main/resources/static
+                ${basedir}/src/main/resources/static
               </outputDirectory>
               <resources>
                 <resource>
@@ -192,7 +192,7 @@
             <phase>prepare-package</phase>
             <configuration>
               <outputDirectory>
-                ${baseDir}/target/classes/templates
+                ${basedir}/target/classes/templates
               </outputDirectory>
               <resources>
                 <resource>
@@ -213,7 +213,7 @@
             <phase>prepare-package</phase>
             <configuration>
               <outputDirectory>
-                ${baseDir}/target/classes/static
+                ${basedir}/target/classes/static
               </outputDirectory>
               <resources>
                 <resource>
