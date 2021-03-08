@@ -11,9 +11,11 @@ import com.taskagile.web.results.ApiResult;
 import com.taskagile.web.results.Result;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+@Controller
 public class RegistrationApiController {
   private UserService service;
 

@@ -1,104 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.3</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-	<groupId>com.taskagile</groupId>
-	<artifactId>app</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>TaskAgile</name>
-	<description>Open source task management tool</description>
-	<properties>
-		<java.version>11</java.version>
-	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-		</dependency>
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+  <groupId>com.taskagile</groupId>
+  <artifactId>app</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
 
-    <!-- https://mvnrepository.com/artifact/junit/junit -->
+  <name>Task Agile</name>
+  <description>Open source task management tool</description>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.3.8.RELEASE</version>
+    <relativePath/>
+    <!-- lookup parent from repository -->
+  </parent>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>11</java.version>
+  </properties>
+
+  <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
     </dependency>
-
-    <!-- https://mvnrepository.com/artifact/javax.validation/validation-api -->
     <dependency>
-      <groupId>javax.validation</groupId>
-      <artifactId>validation-api</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
     </dependency>
-
-    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+    </dependency>
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
     <dependency>
-      <groupId>org.hibernate.validator</groupId>
-      <artifactId>hibernate-validator</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <scope>runtime</scope>
     </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+    </dependency>
+  </dependencies>
 
-	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+  <build>
+     <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
         <executions>
           <execution>
             <id>pre integration test</id>
             <goals>
-              <goal>start</goal>
+                <goal>start</goal>
             </goals>
           </execution>
           <execution>
             <id>post integration test</id>
             <goals>
-              <goal>stop</goal>
+                <goal>stop</goal>
             </goals>
           </execution>
         </executions>
-			</plugin>
-
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.6.0</version>
         <executions>
-
           <execution>
             <id>front-end install</id>
             <goals>
@@ -112,7 +114,6 @@
               </arguments>
             </configuration>
           </execution>
-
           <execution>
             <id>front-end unit test</id>
             <goals>
@@ -127,7 +128,6 @@
               </arguments>
             </configuration>
           </execution>
-
           <execution>
             <id>front-end build package</id>
             <goals>
@@ -142,7 +142,6 @@
               </arguments>
             </configuration>
           </execution>
-
           <execution>
             <id>front-end e2e test</id>
             <goals>
@@ -157,16 +156,14 @@
               </arguments>
             </configuration>
           </execution>
-
         </executions>
-
         <configuration>
           <workingDirectory>${basedir}/front-end</workingDirectory>
         </configuration>
-			</plugin>
-
+      </plugin>
       <plugin>
         <artifactId>maven-resources-plugin</artifactId>
+        <version>3.1.0</version>
         <executions>
           <execution>
             <id>copy front-end template</id>
@@ -175,9 +172,7 @@
             </goals>
             <phase>prepare-package</phase>
             <configuration>
-              <outputDirectory>
-                ${basedir}/src/main/resources/templates
-              </outputDirectory>
+              <outputDirectory>${basedir}/src/main/resources/templates</outputDirectory>
               <resources>
                 <resource>
                   <directory>front-end/dist</directory>
@@ -188,17 +183,14 @@
               </resources>
             </configuration>
           </execution>
-
           <execution>
-            <id>copy front-end static assets</id>
+            <id>copy front-end assets</id>
             <goals>
               <goal>copy-resources</goal>
             </goals>
             <phase>prepare-package</phase>
             <configuration>
-              <outputDirectory>
-                ${basedir}/src/main/resources/static
-              </outputDirectory>
+              <outputDirectory>${basedir}/src/main/resources/static</outputDirectory>
               <resources>
                 <resource>
                   <directory>front-end/dist</directory>
@@ -209,7 +201,6 @@
               </resources>
             </configuration>
           </execution>
-
           <execution>
             <id>copy front-end template to target</id>
             <goals>
@@ -217,9 +208,7 @@
             </goals>
             <phase>prepare-package</phase>
             <configuration>
-              <outputDirectory>
-                ${basedir}/target/classes/templates
-              </outputDirectory>
+              <outputDirectory>${basedir}/target/classes/templates</outputDirectory>
               <resources>
                 <resource>
                   <directory>front-end/dist</directory>
@@ -230,7 +219,6 @@
               </resources>
             </configuration>
           </execution>
-
           <execution>
             <id>copy front-end assets to target</id>
             <goals>
@@ -238,9 +226,7 @@
             </goals>
             <phase>prepare-package</phase>
             <configuration>
-              <outputDirectory>
-                ${basedir}/target/classes/static
-              </outputDirectory>
+              <outputDirectory>${basedir}/target/classes/static</outputDirectory>
               <resources>
                 <resource>
                   <directory>front-end/dist</directory>
@@ -251,23 +237,18 @@
               </resources>
             </configuration>
           </execution>
-
         </executions>
       </plugin>
-
       <plugin>
         <artifactId>maven-clean-plugin</artifactId>
+        <version>3.1.0</version>
         <configuration>
           <filesets>
             <fileset>
-              <directory>
-                ${basedir}/src/main/resources/static
-              </directory>
+              <directory>${basedir}/src/main/resources/static/static</directory>
             </fileset>
             <fileset>
-              <directory>
-                ${basedir}/src/main/resources/templates
-              </directory>
+              <directory>${basedir}/src/main/resources/templates</directory>
               <includes>
                 <include>index.html</include>
               </includes>
@@ -275,7 +256,8 @@
           </filesets>
         </configuration>
       </plugin>
-		</plugins>
-	</build>
+    </plugins>
+  </build>
+
 
 </project>

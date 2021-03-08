@@ -1,10 +1,10 @@
 package com.taskagile.web.payload;
 
-import com.taskagile.domain.application.commands.RegistrationCommand;
-
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.taskagile.domain.application.commands.RegistrationCommand;
 
 public class RegistrationPayload {
   @Size(min = 2, max = 50, message = "Username must be between 2 and 50 characters")
