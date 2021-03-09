@@ -102,7 +102,7 @@ describe('RegisterPage.vue', () => {
     wrapper.vm.submitForm()
     expect(registerSpy).toBeCalled()
     await wrapper.vm.$nextTick()
-    await wrapper.vm.$nextTick()
+    await wrapper.vm.$nextTick() // 내가 임의로 한번 더 $nextTick() 실행
     expect(wrapper.find('.failed').isVisible()).toBe(true)
   })
 
